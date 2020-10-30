@@ -65,7 +65,7 @@ class MyApp extends StatelessWidget {
 
 
         ),
-        onGenerateRoute: Router.generateRoute,
+        onGenerateRoute: AppRouter.generateRoute,
         home:LaunchScreen(),
       ),
     );

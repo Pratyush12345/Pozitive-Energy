@@ -1,0 +1,112 @@
+name: pozitive
+description: A new Flutter application.
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^0.1.2
+  intl: ^0.16.1
+  file_picker: ^2.0.7
+  shared_preferences: ^0.5.12+2
+  pin_code_fields: ^5.2.0
+  signature: ^3.2.0
+  bubble_tab_indicator: ^0.1.4
+  international_phone_input: ^1.0.4
+  provider: ^4.3.2+2
+  get_it: ^5.0.1
+  http: ^0.12.2
+  popup_menu: ^1.0.5
+  fluttertoast: ^7.1.1
+  page_transition: ^1.1.7+2
+  flutter_masked_text: ^0.8.0
+  connectivity: ^0.4.9+5
+
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter.
+flutter:
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+     - assets/Accepted.png
+     - assets/calendar.png
+     - assets/Contract-sent-but-not.png
+     - assets/menu.png
+     - assets/notification.png
+     - assets/PozitiveLogo.png
+     - assets/Quoted.png
+     - assets/Requested-Quote.png
+     - assets/Requested-Requote.png
+     - assets/Requoted.png
+     - assets/search.png
+     - assets/Under-Process.png
+     - assets/view.png
+     - assets/logo.png
+     - assets/menu/Add-Quotation-Group.png
+     - assets/menu/Add-Quotation-Individual.png
+     - assets/menu/Dashboard.png
+     - assets/menu/Logout.png
+     - assets/menu/Request-Quote-Group.png
+     - assets/menu/Request-Quote-Individual.png
+     - assets/icon/Affiliates.png
+     - assets/icon/Alliance Commission.png
+     - assets/icon/back-arrow.png
+     - assets/icon/commission_statment.png
+     - assets/icon/commission-detail.png
+     - assets/icon/commission-status.png
+     - assets/icon/Contract Received.png
+     - assets/icon/Contract-Accepted.png
+     - assets/icon/COT.png
+     - assets/icon/daily-commission.png
+     - assets/icon/download.png
+     - assets/icon/download-invoice.png
+     - assets/icon/dual-fuel.png
+     - assets/icon/Electricity.png
+     - assets/icon/gas.png
+     - assets/icon/Live-Customer.png
+     - assets/icon/Loss-Customer.png
+     - assets/icon/notfication.png
+     - assets/icon/Objected.png
+     - assets/icon/Pozitive_Rejected.png
+     - assets/icon/Prospect.png
+     - assets/icon/Total_Amount.png
+     - assets/icon/Total_Customer.png
+     - assets/icon/Total_Group.png
+     - assets/icon/Total_KWH.png
+     - assets/icon/Undergoing_Registration.png
+
+  fonts:
+    - family: Roboto
+      fonts:
+        - asset: assets/font/Roboto-Regular.ttf

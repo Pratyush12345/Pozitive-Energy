@@ -1,4 +1,3 @@
-
 import 'package:get_it/get_it.dart';
 import 'package:pozitive/Core/Model/Api/profileIdModel.dart';
 import 'package:pozitive/Core/Model/DashBoardModel.dart';
@@ -11,12 +10,10 @@ GetIt getIt = GetIt.instance;
 class DashBoardViewModel extends BaseModel {
   DashBoardApi _api = getIt<DashBoardApi>();
 
-  DashBoardModel dashBoardModel=DashBoardModel();
-
-
+  DashBoardModel dashBoardModel = DashBoardModel();
 
   Future getDashBoardDetails(ProfileId profileId) async {
-    assert( profileId != null);
+    assert(profileId != null);
     // TODO: Apply validation here or somewhere else?
 
     print('acountId ===${profileId.accountId}');
@@ -25,13 +22,11 @@ class DashBoardViewModel extends BaseModel {
 
     final response = await _api.getDashBoardDetails(profileId);
 
-
     if (isNotError(response)) {
-      dashBoardModel=response;
+      dashBoardModel = response;
       print(response);
-    }else{
+    } else {
       print("error");
-
     }
 
     setState(ViewState.IDLE);

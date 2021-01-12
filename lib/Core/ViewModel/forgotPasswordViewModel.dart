@@ -1,4 +1,3 @@
-
 import 'dart:convert';
 
 import 'package:get_it/get_it.dart';
@@ -13,12 +12,8 @@ GetIt getIt = GetIt.instance;
 class ForgotPasswordViewModel extends BaseModel {
   ForgotPasswordApi _api = getIt<ForgotPasswordApi>();
 
-
-
-
-
   Future forgotPassword(ProfileEmailId profileEmailId) async {
-    assert( profileEmailId != null);
+    assert(profileEmailId != null);
     // TODO: Apply validation here or somewhere else?
 
     setState(ViewState.BUSY);
@@ -26,12 +21,11 @@ class ForgotPasswordViewModel extends BaseModel {
     final response = await _api.forGotPassword(profileEmailId);
 
     if (isNotError(response)) {
-      var res= jsonDecode(response);
+      var res = jsonDecode(response);
       print('printitin${res['msg']}');
       successToast(res['msg']);
-    }else{
+    } else {
       print("error");
-
     }
 
     setState(ViewState.IDLE);

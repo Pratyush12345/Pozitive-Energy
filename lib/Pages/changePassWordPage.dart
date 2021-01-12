@@ -13,102 +13,102 @@ class ChangePasswordPage extends StatefulWidget {
 }
 
 class _ChangePasswordPageState extends State<ChangePasswordPage> {
-
   GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
   final _formKey = GlobalKey<FormState>();
 
-  bool _autovalidation=false;
+  bool _autovalidation = false;
 
   @override
   Widget build(BuildContext context) {
     return BaseView<ChangePasswordViewModel>(
-      builder: (context,model,child){
-        if(model.state==ViewState.BUSY){
+      builder: (context, model, child) {
+        if (model.state == ViewState.BUSY) {
           return Scaffold(
             body: Center(
               child: CircularProgressIndicator(),
             ),
           );
-        }else{
+        } else {
           return Scaffold(
             backgroundColor: Colors.white,
-            appBar:appbar("Change Password",context,_scaffoldKey, false,false),
-            body: Padding(padding: EdgeInsets.only(left: MediaQuery.of(context).size.width * 0.03,right: MediaQuery.of(context).size.width * 0.03),
+            appBar:
+                appbar("Change Password", context, _scaffoldKey, false, false),
+            body: Padding(
+                padding: EdgeInsets.only(
+                    left: MediaQuery.of(context).size.width * 0.03,
+                    right: MediaQuery.of(context).size.width * 0.03),
                 child: SingleChildScrollView(
                   child: Form(
                     key: _formKey,
                     child: Column(
                       children: <Widget>[
                         SizedBox(
-                          height:MediaQuery.of(context).size.height*.07,
+                          height: MediaQuery.of(context).size.height * .07,
                         ),
-                        textField(model.oldPassword,true,_autovalidation,TextInputType.text,"Old Password",
-                                (value) {
-                              if (value.isEmpty) {
-                                return 'Please enter old password';
-                              }
-                              return null;
-                            },context),
+                        textField(model.oldPassword, true, _autovalidation,
+                            TextInputType.text, "Old Password", (value) {
+                          if (value.isEmpty) {
+                            return 'Please enter old password';
+                          }
+                          return null;
+                        }, context),
                         SizedBox(
-                          height:MediaQuery.of(context).size.height*.03,
+                          height: MediaQuery.of(context).size.height * .03,
                         ),
-                        textField(model.newPassword,true,_autovalidation,TextInputType.text,"New Password",
-                                (value) {
-                              if (value.isEmpty) {
-                                return 'Please enter new password';
-                              }else if(value==model.oldPassword.text){
-                                return "Old and new Password can't be same";
-                              }
-                              return null;
-                            },context),
+                        textField(model.newPassword, true, _autovalidation,
+                            TextInputType.text, "New Password", (value) {
+                          if (value.isEmpty) {
+                            return 'Please enter new password';
+                          } else if (value == model.oldPassword.text) {
+                            return "Old and new Password can't be same";
+                          }
+                          return null;
+                        }, context),
                         SizedBox(
-                          height:MediaQuery.of(context).size.height*.03,
+                          height: MediaQuery.of(context).size.height * .03,
                         ),
-                        textField(model.accountId,false,_autovalidation,TextInputType.text,"Account Id",
-                                (value) {
-                              if (value.isEmpty) {
-                                return 'Please enter account Id';
-                              }
-                              return null;
-                            },context),
+                        textField(model.accountId, false, _autovalidation,
+                            TextInputType.text, "Account Id", (value) {
+                          if (value.isEmpty) {
+                            return 'Please enter account Id';
+                          }
+                          return null;
+                        }, context),
                         SizedBox(
-                          height:MediaQuery.of(context).size.height*.05,
+                          height: MediaQuery.of(context).size.height * .05,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
-                            InkWell(child: buttonframewithresize(context,"Change Password",0.55),
+                            InkWell(
+                              child: buttonframewithresize(
+                                  context, "Change Password", 0.55),
                               highlightColor: Colors.transparent,
                               splashColor: Colors.transparent,
-                              onTap: (){
+                              onTap: () {
                                 if (_formKey.currentState.validate()) {
                                   model.changePassword(ChangePasswordCredential(
                                       accountId: model.accountId.text,
                                       oldPassword: model.oldPassword.text,
-                                      password: model.newPassword.text
-                                  ));
-
+                                      password: model.newPassword.text));
                                 }
-
-
-
                               },
-
                             ),
-                            InkWell(child: buttonframewithresize(context,"Back",0.3),
+                            InkWell(
+                              child:
+                                  buttonframewithresize(context, "Back", 0.3),
                               highlightColor: Colors.transparent,
                               splashColor: Colors.transparent,
-                              onTap: (){
+                              onTap: () {
                                 Navigator.of(context).pop();
-                              },),
+                              },
+                            ),
                           ],
                         )
                       ],
                     ),
                   ),
-                )
-
-            ) ,
+                )),
           );
         }
       },

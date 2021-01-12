@@ -1,42 +1,36 @@
-
-
 import 'package:pozitive/Core/Model/user.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class Prefs{
+class Prefs {
   static Future<User> getUser() async {
     final SharedPreferences preferences = await SharedPreferences.getInstance();
     String AccountId = preferences.getString("AccountId");
     String EmailId = preferences.getString("EmailId");
-    String UserName=preferences.getString("UserName");
-    String FirstName=preferences.getString('FirstName');
-    String MiddleName=preferences.getString('MiddleName');
-    String LastName=preferences.getString('LastName');
-    String PhoneNo=preferences.getString('PhoneNo');
-    String Address1=preferences.getString('Address1');
-    String Address2=preferences.getString('Address2');
-    String Postcode=preferences.getString('Postcode');
-    String City=preferences.getString('City');
-
+    String UserName = preferences.getString("UserName");
+    String FirstName = preferences.getString('FirstName');
+    String MiddleName = preferences.getString('MiddleName');
+    String LastName = preferences.getString('LastName');
+    String PhoneNo = preferences.getString('PhoneNo');
+    String Address1 = preferences.getString('Address1');
+    String Address2 = preferences.getString('Address2');
+    String Postcode = preferences.getString('Postcode');
+    String City = preferences.getString('City');
 
     print('#####pre#########$UserName');
 
-
     return new User(
-      accountId: AccountId,
-      firstName: FirstName,
-      lastName: LastName,
-      userName: UserName,
-      address1: Address1,
-      address2: Address2,
-      emailId: EmailId,
-      middleName: MiddleName,
-      postcode: Postcode,
-      phoneNo: PhoneNo,
-      city: City
-    );
+        accountId: AccountId,
+        firstName: FirstName,
+        lastName: LastName,
+        userName: UserName,
+        address1: Address1,
+        address2: Address2,
+        emailId: EmailId,
+        middleName: MiddleName,
+        postcode: Postcode,
+        phoneNo: PhoneNo,
+        city: City);
   }
-
 
   static void setUserProfile(User user) async {
     final SharedPreferences preferences = await SharedPreferences.getInstance();
@@ -54,11 +48,10 @@ class Prefs{
     preferences.commit();
   }
 
-  static void logIn(bool logIn)async{
+  static void logIn(bool logIn) async {
     final SharedPreferences preferences = await SharedPreferences.getInstance();
     preferences.setBool("logout", logIn);
     preferences.commit();
-
   }
 
   static void logOut() async {
@@ -80,6 +73,4 @@ class Prefs{
     preferences.setString("City", null);
     preferences.commit();
   }
-
-
 }

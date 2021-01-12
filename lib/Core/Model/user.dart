@@ -140,21 +140,21 @@ class User {
 
   User(
       {this.accountId,
-        this.userName,
-        this.firstName,
-        this.middleName,
-        this.lastName,
-        this.phoneNo,
-        this.address1,
-        this.address2,
-        this.postcode,
-        this.city,
-        this.emailId,
-        this.password});
+      this.userName,
+      this.firstName,
+      this.middleName,
+      this.lastName,
+      this.phoneNo,
+      this.address1,
+      this.address2,
+      this.postcode,
+      this.city,
+      this.emailId,
+      this.password});
 
   User.fromJson(Map<String, dynamic> json) {
     accountId = json['AccountId'];
-    userName=json['UserName'];
+    userName = json['UserName'];
     firstName = json['FirstName'];
     middleName = json['MiddleName'];
     lastName = json['LastName'];
@@ -170,7 +170,7 @@ class User {
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['AccountId'] = this.accountId;
-    data['UserName']=this.userName;
+    data['UserName'] = this.userName;
     data['FirstName'] = this.firstName;
     data['MiddleName'] = this.middleName;
     data['LastName'] = this.lastName;

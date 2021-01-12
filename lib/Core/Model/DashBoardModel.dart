@@ -17,20 +17,20 @@ class DashBoardModel {
 
   DashBoardModel(
       {this.accountId,
-        this.upderProcessCount,
-        this.requestedQuoteCount,
-        this.quotedCount,
-        this.requestedReQuoteCount,
-        this.requotedCount,
-        this.acceptedCount,
-        this.contractSendNotReceivedCount,
-        this.upderProcessGroupCount,
-        this.requestedQuoteGroupCount,
-        this.quotedGroupCount,
-        this.requestedReQuoteGroupCount,
-        this.requotedGroupCount,
-        this.acceptedGroupCount,
-        this.contractSendNotReceivedGroupCount});
+      this.upderProcessCount,
+      this.requestedQuoteCount,
+      this.quotedCount,
+      this.requestedReQuoteCount,
+      this.requotedCount,
+      this.acceptedCount,
+      this.contractSendNotReceivedCount,
+      this.upderProcessGroupCount,
+      this.requestedQuoteGroupCount,
+      this.quotedGroupCount,
+      this.requestedReQuoteGroupCount,
+      this.requotedGroupCount,
+      this.acceptedGroupCount,
+      this.contractSendNotReceivedGroupCount});
 
   DashBoardModel.fromJson(Map<String, dynamic> json) {
     accountId = json['AccountId'];
@@ -48,7 +48,7 @@ class DashBoardModel {
     requotedGroupCount = json['RequotedGroupCount'];
     acceptedGroupCount = json['AcceptedGroupCount'];
     contractSendNotReceivedGroupCount =
-    json['ContractSendNotReceivedGroupCount'];
+        json['ContractSendNotReceivedGroupCount'];
   }
 
   Map<String, dynamic> toJson() {

@@ -29,14 +29,19 @@ class _DirectDebitAgreementState extends State<DirectDebitAgreement> {
   TextEditingController requirebydatecontroller = TextEditingController();
   TextEditingController preferreddatecontroller = TextEditingController();
 
-  final SignatureController _controller = SignatureController(penStrokeWidth: 2, penColor: Colors.black);
+  final SignatureController _controller =
+      SignatureController(penStrokeWidth: 2, penColor: Colors.black);
 
   int ddofmonth = 0;
 
   DateTime selectedDate = DateTime.now();
   DateFormat dateFormat = DateFormat("yyyy-MM-dd");
   Future _selectDate(BuildContext context, String fromfield) async {
-    final DateTime picked = await showDatePicker(context: context, initialDate: selectedDate, firstDate: DateTime(2015, 8), lastDate: DateTime(2101));
+    final DateTime picked = await showDatePicker(
+        context: context,
+        initialDate: selectedDate,
+        firstDate: DateTime(2015, 8),
+        lastDate: DateTime(2101));
     if (picked != null) {
       if (fromfield == "Required") {
         setState(() {
@@ -61,7 +66,9 @@ class _DirectDebitAgreementState extends State<DirectDebitAgreement> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Padding(
-        padding: EdgeInsets.only(left: MediaQuery.of(context).size.width * 0.03, right: MediaQuery.of(context).size.width * 0.03),
+        padding: EdgeInsets.only(
+            left: MediaQuery.of(context).size.width * 0.03,
+            right: MediaQuery.of(context).size.width * 0.03),
         child: ListView(
           children: <Widget>[
             SizedBox(
@@ -69,7 +76,9 @@ class _DirectDebitAgreementState extends State<DirectDebitAgreement> {
             ),
             Text(
               "Direct Debit Agreement Instruction to your Bank or Building Society to pay by Direct Debit",
-              style: TextStyle(fontSize: MediaQuery.of(context).size.height * .02, color: Colors.redAccent),
+              style: TextStyle(
+                  fontSize: MediaQuery.of(context).size.height * .02,
+                  color: Colors.redAccent),
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.022,
@@ -77,21 +86,26 @@ class _DirectDebitAgreementState extends State<DirectDebitAgreement> {
             Text(
               "Please pay Pozitive Energy Limited Direct Debits from the account detailed on this instruction, subject to the safeguards assured by the Direct Debit Guarantee."
               " I understand that this instuction my remain with Pozitive Energy Limited and, if so, details will be passed", //electronically to my Bank or Building Society
-              style: TextStyle(fontSize: MediaQuery.of(context).size.height * .02, color: Colors.black),
+              style: TextStyle(
+                  fontSize: MediaQuery.of(context).size.height * .02,
+                  color: Colors.black),
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.022,
             ),
             Text(
               "Pozitive Energy Business customer reference number",
-              style: TextStyle(fontSize: MediaQuery.of(context).size.height * .015, color: Color.fromRGBO(31, 33, 29, 1)),
+              style: TextStyle(
+                  fontSize: MediaQuery.of(context).size.height * .015,
+                  color: Color.fromRGBO(31, 33, 29, 1)),
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.01,
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * .062,
-              child: innertextfield(refNo, false, _autovalidation, TextInputType.number, "reference number", (value) {
+              child: innertextfield(refNo, false, _autovalidation,
+                  TextInputType.number, "reference number", (value) {
                 if (value.isEmpty) {
                   return 'Please enter reference number"';
                 }
@@ -103,14 +117,17 @@ class _DirectDebitAgreementState extends State<DirectDebitAgreement> {
             ),
             Text(
               "Name/s of account holder(s)",
-              style: TextStyle(fontSize: MediaQuery.of(context).size.height * .015, color: Color.fromRGBO(31, 33, 29, 1)),
+              style: TextStyle(
+                  fontSize: MediaQuery.of(context).size.height * .015,
+                  color: Color.fromRGBO(31, 33, 29, 1)),
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.01,
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * .062,
-              child: innertextfield(name, false, _autovalidation, TextInputType.text, "Name Account holder", (value) {
+              child: innertextfield(name, false, _autovalidation,
+                  TextInputType.text, "Name Account holder", (value) {
                 if (value.isEmpty) {
                   return 'Please enter Name Account holder';
                 }
@@ -122,14 +139,17 @@ class _DirectDebitAgreementState extends State<DirectDebitAgreement> {
             ),
             Text(
               "Business Name",
-              style: TextStyle(fontSize: MediaQuery.of(context).size.height * .015, color: Color.fromRGBO(31, 33, 29, 1)),
+              style: TextStyle(
+                  fontSize: MediaQuery.of(context).size.height * .015,
+                  color: Color.fromRGBO(31, 33, 29, 1)),
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.01,
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * .062,
-              child: innertextfield(businessName, false, _autovalidation, TextInputType.text, "Business Name", (value) {
+              child: innertextfield(businessName, false, _autovalidation,
+                  TextInputType.text, "Business Name", (value) {
                 if (value.isEmpty) {
                   return 'Please enter Business Name';
                 }
@@ -141,7 +161,9 @@ class _DirectDebitAgreementState extends State<DirectDebitAgreement> {
             ),
             Text(
               "Branch Code",
-              style: TextStyle(fontSize: MediaQuery.of(context).size.height * .015, color: Color.fromRGBO(31, 33, 29, 1)),
+              style: TextStyle(
+                  fontSize: MediaQuery.of(context).size.height * .015,
+                  color: Color.fromRGBO(31, 33, 29, 1)),
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.01,
@@ -171,14 +193,17 @@ class _DirectDebitAgreementState extends State<DirectDebitAgreement> {
             ),
             Text(
               "Account Number",
-              style: TextStyle(fontSize: MediaQuery.of(context).size.height * .015, color: Color.fromRGBO(31, 33, 29, 1)),
+              style: TextStyle(
+                  fontSize: MediaQuery.of(context).size.height * .015,
+                  color: Color.fromRGBO(31, 33, 29, 1)),
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.01,
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * .062,
-              child: innertextfield(accountNumber, false, _autovalidation, TextInputType.number, "Account Number", (value) {
+              child: innertextfield(accountNumber, false, _autovalidation,
+                  TextInputType.number, "Account Number", (value) {
                 if (value.isEmpty) {
                   return 'Please enter Account Number';
                 }
@@ -190,14 +215,17 @@ class _DirectDebitAgreementState extends State<DirectDebitAgreement> {
             ),
             Text(
               "Owner Name",
-              style: TextStyle(fontSize: MediaQuery.of(context).size.height * .015, color: Color.fromRGBO(31, 33, 29, 1)),
+              style: TextStyle(
+                  fontSize: MediaQuery.of(context).size.height * .015,
+                  color: Color.fromRGBO(31, 33, 29, 1)),
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.01,
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * .062,
-              child: innertextfield(ownerName, false, _autovalidation, TextInputType.text, "Owner Name", (value) {
+              child: innertextfield(ownerName, false, _autovalidation,
+                  TextInputType.text, "Owner Name", (value) {
                 if (value.isEmpty) {
                   return 'Please enter Owner Name';
                 }
@@ -209,14 +237,18 @@ class _DirectDebitAgreementState extends State<DirectDebitAgreement> {
             ),
             Text(
               "To",
-              style: TextStyle(fontSize: MediaQuery.of(context).size.height * .015, color: Color.fromRGBO(31, 33, 29, 1)),
+              style: TextStyle(
+                  fontSize: MediaQuery.of(context).size.height * .015,
+                  color: Color.fromRGBO(31, 33, 29, 1)),
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.01,
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * .062,
-              child: innertextfield(to, false, _autovalidation, TextInputType.text, "Owner Name", (value) {
+              child: innertextfield(
+                  to, false, _autovalidation, TextInputType.text, "Owner Name",
+                  (value) {
                 if (value.isEmpty) {
                   return 'Please enter Owner Name';
                 }
@@ -228,7 +260,9 @@ class _DirectDebitAgreementState extends State<DirectDebitAgreement> {
             ),
             Text(
               "DD Date Every Month",
-              style: TextStyle(fontSize: MediaQuery.of(context).size.height * .015, color: Color.fromRGBO(31, 33, 29, 1)),
+              style: TextStyle(
+                  fontSize: MediaQuery.of(context).size.height * .015,
+                  color: Color.fromRGBO(31, 33, 29, 1)),
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.01,
@@ -251,13 +285,15 @@ class _DirectDebitAgreementState extends State<DirectDebitAgreement> {
                               ? Icon(
                                   Icons.check_box,
                                   color: Color.fromRGBO(155, 119, 217, 1),
-                                  size: MediaQuery.of(context).size.height * .023,
+                                  size:
+                                      MediaQuery.of(context).size.height * .023,
                                 )
                               : InkWell(
                                   child: Icon(
                                     Icons.check_box_outline_blank,
                                     color: Color.fromRGBO(155, 119, 217, 1),
-                                    size: MediaQuery.of(context).size.height * .023,
+                                    size: MediaQuery.of(context).size.height *
+                                        .023,
                                   ),
                                   onTap: () {
                                     setState(() {
@@ -270,7 +306,10 @@ class _DirectDebitAgreementState extends State<DirectDebitAgreement> {
                           ),
                           Text(
                             "7th",
-                            style: TextStyle(fontSize: MediaQuery.of(context).size.height * .02, color: Color.fromRGBO(0, 0, 0, .8)),
+                            style: TextStyle(
+                                fontSize:
+                                    MediaQuery.of(context).size.height * .02,
+                                color: Color.fromRGBO(0, 0, 0, .8)),
                           ),
                         ],
                       ),
@@ -290,9 +329,15 @@ class _DirectDebitAgreementState extends State<DirectDebitAgreement> {
                       child: Row(
                         children: <Widget>[
                           ddofmonth == 2
-                              ? Icon(Icons.check_box, size: MediaQuery.of(context).size.height * .023, color: Color.fromRGBO(155, 119, 217, 1))
+                              ? Icon(Icons.check_box,
+                                  size:
+                                      MediaQuery.of(context).size.height * .023,
+                                  color: Color.fromRGBO(155, 119, 217, 1))
                               : InkWell(
-                                  child: Icon(Icons.check_box_outline_blank, size: MediaQuery.of(context).size.height * .023, color: Color.fromRGBO(155, 119, 217, 1)),
+                                  child: Icon(Icons.check_box_outline_blank,
+                                      size: MediaQuery.of(context).size.height *
+                                          .023,
+                                      color: Color.fromRGBO(155, 119, 217, 1)),
                                   onTap: () {
                                     setState(() {
                                       ddofmonth = 2;
@@ -304,7 +349,10 @@ class _DirectDebitAgreementState extends State<DirectDebitAgreement> {
                           ),
                           Text(
                             "14th",
-                            style: TextStyle(fontSize: MediaQuery.of(context).size.height * .02, color: Color.fromRGBO(0, 0, 0, .8)),
+                            style: TextStyle(
+                                fontSize:
+                                    MediaQuery.of(context).size.height * .02,
+                                color: Color.fromRGBO(0, 0, 0, .8)),
                           ),
                         ],
                       ),
@@ -326,13 +374,15 @@ class _DirectDebitAgreementState extends State<DirectDebitAgreement> {
                           ddofmonth == 3
                               ? Icon(
                                   Icons.check_box,
-                                  size: MediaQuery.of(context).size.height * .023,
+                                  size:
+                                      MediaQuery.of(context).size.height * .023,
                                   color: Color.fromRGBO(155, 119, 217, 1),
                                 )
                               : InkWell(
                                   child: Icon(
                                     Icons.check_box_outline_blank,
-                                    size: MediaQuery.of(context).size.height * .023,
+                                    size: MediaQuery.of(context).size.height *
+                                        .023,
                                     color: Color.fromRGBO(155, 119, 217, 1),
                                   ),
                                   onTap: () {
@@ -346,7 +396,10 @@ class _DirectDebitAgreementState extends State<DirectDebitAgreement> {
                           ),
                           Text(
                             "21th",
-                            style: TextStyle(fontSize: MediaQuery.of(context).size.height * .02, color: Color.fromRGBO(0, 0, 0, .8)),
+                            style: TextStyle(
+                                fontSize:
+                                    MediaQuery.of(context).size.height * .02,
+                                color: Color.fromRGBO(0, 0, 0, .8)),
                           ),
                         ],
                       ),
@@ -368,13 +421,15 @@ class _DirectDebitAgreementState extends State<DirectDebitAgreement> {
                           ddofmonth == 4
                               ? Icon(
                                   Icons.check_box,
-                                  size: MediaQuery.of(context).size.height * .023,
+                                  size:
+                                      MediaQuery.of(context).size.height * .023,
                                   color: Color.fromRGBO(155, 119, 217, 1),
                                 )
                               : InkWell(
                                   child: Icon(
                                     Icons.check_box_outline_blank,
-                                    size: MediaQuery.of(context).size.height * .023,
+                                    size: MediaQuery.of(context).size.height *
+                                        .023,
                                     color: Color.fromRGBO(155, 119, 217, 1),
                                   ),
                                   onTap: () {
@@ -388,7 +443,10 @@ class _DirectDebitAgreementState extends State<DirectDebitAgreement> {
                           ),
                           Text(
                             "28th",
-                            style: TextStyle(fontSize: MediaQuery.of(context).size.height * .02, color: Color.fromRGBO(0, 0, 0, .8)),
+                            style: TextStyle(
+                                fontSize:
+                                    MediaQuery.of(context).size.height * .02,
+                                color: Color.fromRGBO(0, 0, 0, .8)),
                           ),
                         ],
                       ),
@@ -404,21 +462,32 @@ class _DirectDebitAgreementState extends State<DirectDebitAgreement> {
                   ),
                 ],
               ),
-              decoration: BoxDecoration(color: Colors.white, border: Border.all(color: themeApp.textfieldbordercolor, width: 2), borderRadius: BorderRadius.circular(3)),
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  border: Border.all(
+                      color: themeApp.textfieldbordercolor, width: 2),
+                  borderRadius: BorderRadius.circular(3)),
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.025,
             ),
             Text(
               "Bank or Building  Society address & Post Code",
-              style: TextStyle(fontSize: MediaQuery.of(context).size.height * .015, color: Color.fromRGBO(31, 33, 29, 1)),
+              style: TextStyle(
+                  fontSize: MediaQuery.of(context).size.height * .015,
+                  color: Color.fromRGBO(31, 33, 29, 1)),
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.01,
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * .062,
-              child: innertextfield(bankBuildingAddressPostcode, false, _autovalidation, TextInputType.text, "Bank or Building  Society address & Post Code", (value) {
+              child: innertextfield(
+                  bankBuildingAddressPostcode,
+                  false,
+                  _autovalidation,
+                  TextInputType.text,
+                  "Bank or Building  Society address & Post Code", (value) {
                 if (value.isEmpty) {
                   return 'Please enter Address';
                 }
@@ -430,7 +499,9 @@ class _DirectDebitAgreementState extends State<DirectDebitAgreement> {
             ),
             Text(
               "Signature",
-              style: TextStyle(fontSize: MediaQuery.of(context).size.height * .015, color: Color.fromRGBO(31, 33, 29, 1)),
+              style: TextStyle(
+                  fontSize: MediaQuery.of(context).size.height * .015,
+                  color: Color.fromRGBO(31, 33, 29, 1)),
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.01,
@@ -442,15 +513,22 @@ class _DirectDebitAgreementState extends State<DirectDebitAgreement> {
                 //SIGNATURE CANVAS
                 Container(
                   decoration: BoxDecoration(
-                    border: Border.all(width: 2.0, color: Color.fromRGBO(128, 189, 40, 1)),
+                    border: Border.all(
+                        width: 2.0, color: Color.fromRGBO(128, 189, 40, 1)),
                   ),
-                  child: SizedBox(height: 300, child: Signature(controller: _controller, height: 300, backgroundColor: Colors.white)),
+                  child: SizedBox(
+                      height: 300,
+                      child: Signature(
+                          controller: _controller,
+                          height: 300,
+                          backgroundColor: Colors.white)),
                 ),
                 //OK AND CLEAR BUTTONS
                 Container(
                   decoration: BoxDecoration(
                     color: Color.fromRGBO(18, 122, 69, 1),
-                    border: Border.all(width: 1.0, color: Color.fromRGBO(18, 122, 69, 1)),
+                    border: Border.all(
+                        width: 1.0, color: Color.fromRGBO(18, 122, 69, 1)),
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -494,14 +572,18 @@ class _DirectDebitAgreementState extends State<DirectDebitAgreement> {
             ),
             Text(
               "Name",
-              style: TextStyle(fontSize: MediaQuery.of(context).size.height * .015, color: Color.fromRGBO(31, 33, 29, 1)),
+              style: TextStyle(
+                  fontSize: MediaQuery.of(context).size.height * .015,
+                  color: Color.fromRGBO(31, 33, 29, 1)),
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.01,
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * .062,
-              child: innertextfield(name1, false, _autovalidation, TextInputType.text, "Name", (value) {
+              child: innertextfield(
+                  name1, false, _autovalidation, TextInputType.text, "Name",
+                  (value) {
                 if (value.isEmpty) {
                   return 'Please enter name';
                 }
@@ -513,7 +595,9 @@ class _DirectDebitAgreementState extends State<DirectDebitAgreement> {
             ),
             Text(
               "Date",
-              style: TextStyle(fontSize: MediaQuery.of(context).size.height * .015, color: Color.fromRGBO(31, 33, 29, 1)),
+              style: TextStyle(
+                  fontSize: MediaQuery.of(context).size.height * .015,
+                  color: Color.fromRGBO(31, 33, 29, 1)),
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.01,
@@ -521,7 +605,12 @@ class _DirectDebitAgreementState extends State<DirectDebitAgreement> {
             InkWell(
               child: SizedBox(
                 height: MediaQuery.of(context).size.height * .062,
-                child: datetextfield(requirebydatecontroller, false, _autovalidation, TextInputType.text, "Select date", (value) {
+                child: datetextfield(
+                    requirebydatecontroller,
+                    false,
+                    _autovalidation,
+                    TextInputType.text,
+                    "Select date", (value) {
                   if (value.isEmpty) {
                     return 'Please Select date';
                   }
@@ -537,14 +626,17 @@ class _DirectDebitAgreementState extends State<DirectDebitAgreement> {
             ),
             Text(
               "Company Name",
-              style: TextStyle(fontSize: MediaQuery.of(context).size.height * .015, color: Color.fromRGBO(31, 33, 29, 1)),
+              style: TextStyle(
+                  fontSize: MediaQuery.of(context).size.height * .015,
+                  color: Color.fromRGBO(31, 33, 29, 1)),
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.01,
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * .062,
-              child: innertextfield(companyName, false, _autovalidation, TextInputType.text, "Company Name", (value) {
+              child: innertextfield(companyName, false, _autovalidation,
+                  TextInputType.text, "Company Name", (value) {
                 if (value.isEmpty) {
                   return 'Please enter Company Name';
                 }
@@ -556,7 +648,9 @@ class _DirectDebitAgreementState extends State<DirectDebitAgreement> {
             ),
             Text(
               "Instruction to our bank or building Society to by Direct Debit",
-              style: TextStyle(fontSize: MediaQuery.of(context).size.height * .02, color: Colors.redAccent),
+              style: TextStyle(
+                  fontSize: MediaQuery.of(context).size.height * .02,
+                  color: Colors.redAccent),
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.022,
@@ -569,7 +663,9 @@ class _DirectDebitAgreementState extends State<DirectDebitAgreement> {
               ", you are entitled to a full and immediate refund of the amount paid from your bank or Building Society. If you receive a refund you "
               "are not entitled to, you must pay it back when Pozitive Energy Limited asks you to. You can cancel a Direct Debit at any time by simply"
               " contacting your Bank or Building Society. Written confirmation may be required. Please also notify us.",
-              style: TextStyle(fontSize: MediaQuery.of(context).size.height * .02, color: Colors.black),
+              style: TextStyle(
+                  fontSize: MediaQuery.of(context).size.height * .02,
+                  color: Colors.black),
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.025,
@@ -580,10 +676,15 @@ class _DirectDebitAgreementState extends State<DirectDebitAgreement> {
               child: Center(
                 child: Text(
                   "Save And Generate Contract",
-                  style: TextStyle(color: Colors.white, fontSize: MediaQuery.of(context).size.height * 0.017, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: MediaQuery.of(context).size.height * 0.017,
+                      fontWeight: FontWeight.bold),
                 ),
               ),
-              decoration: BoxDecoration(color: Color.fromRGBO(155, 119, 217, 1), borderRadius: BorderRadius.circular(30)),
+              decoration: BoxDecoration(
+                  color: Color.fromRGBO(155, 119, 217, 1),
+                  borderRadius: BorderRadius.circular(30)),
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.025,
@@ -594,10 +695,14 @@ class _DirectDebitAgreementState extends State<DirectDebitAgreement> {
               child: Center(
                 child: Text(
                   "Back To Quote",
-                  style: TextStyle(color: Colors.white, fontSize: MediaQuery.of(context).size.height * 0.017, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: MediaQuery.of(context).size.height * 0.017,
+                      fontWeight: FontWeight.bold),
                 ),
               ),
-              decoration: BoxDecoration(color: Colors.blue, borderRadius: BorderRadius.circular(30)),
+              decoration: BoxDecoration(
+                  color: Colors.blue, borderRadius: BorderRadius.circular(30)),
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.028,

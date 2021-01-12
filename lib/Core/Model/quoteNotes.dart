@@ -11,7 +11,7 @@ class QuoteNote {
     quoteid = json['Quoteid'];
     notesText = json['NotesText'];
     if (json['Notes'] != null) {
-      notes = new List<Notes>();
+      notes = <Notes>[];
       json['Notes'].forEach((v) {
         notes.add(new Notes.fromJson(v));
       });

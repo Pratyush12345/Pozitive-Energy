@@ -1,4 +1,3 @@
-
 import 'package:pozitive/Core/Model/sendable.dart';
 
 class ProfileEmailId extends Sendable {
@@ -6,7 +5,6 @@ class ProfileEmailId extends Sendable {
 
   ProfileEmailId({
     this.emailId,
-
   });
 
   /// Create the JSON required by Dayblizz API server for updating a post.

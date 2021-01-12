@@ -12,13 +12,14 @@ import 'package:pozitive/Pages/Quatation_Individual/Tab/priceElectricityGas.dart
 import 'package:pozitive/Pages/Quatation_Individual/Tab/priceGas.dart';
 import 'package:pozitive/Util/global.dart' as globals;
 
-
 class AddQuotationIndividualPage extends StatefulWidget {
   @override
-  _AddQuotationIndividualPageState createState() => _AddQuotationIndividualPageState();
+  _AddQuotationIndividualPageState createState() =>
+      _AddQuotationIndividualPageState();
 }
 
-class _AddQuotationIndividualPageState extends State<AddQuotationIndividualPage> with SingleTickerProviderStateMixin {
+class _AddQuotationIndividualPageState extends State<AddQuotationIndividualPage>
+    with SingleTickerProviderStateMixin {
   //TabController _tabController;
   GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
   @override
@@ -59,33 +60,62 @@ class _AddQuotationIndividualPageState extends State<AddQuotationIndividualPage>
                   child: new Tab(
                     child: Text(
                       "Business Detail",
-                      style: TextStyle(color: globals.tabController4.index == 0 ? ThemeApp().purplecolor : Colors.grey, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                          color: globals.tabController4.index == 0
+                              ? ThemeApp().purplecolor
+                              : Colors.grey,
+                          fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),
                 Container(
                   child: new Tab(
-                    child: Text("Electricity", style: TextStyle(color: globals.tabController4.index == 1 ? ThemeApp().purplecolor : Colors.grey, fontWeight: FontWeight.bold)),
+                    child: Text("Electricity",
+                        style: TextStyle(
+                            color: globals.tabController4.index == 1
+                                ? ThemeApp().purplecolor
+                                : Colors.grey,
+                            fontWeight: FontWeight.bold)),
                   ),
                 ),
                 Container(
                   child: new Tab(
-                    child: Text("Gas", style: TextStyle(color: globals.tabController4.index == 2 ? ThemeApp().purplecolor : Colors.grey, fontWeight: FontWeight.bold)),
+                    child: Text("Gas",
+                        style: TextStyle(
+                            color: globals.tabController4.index == 2
+                                ? ThemeApp().purplecolor
+                                : Colors.grey,
+                            fontWeight: FontWeight.bold)),
                   ),
                 ),
                 Container(
                   child: new Tab(
-                    child: Text("Price Electricity/Gas", style: TextStyle(color: globals.tabController4.index == 3 ? ThemeApp().purplecolor : Colors.grey, fontWeight: FontWeight.bold)),
+                    child: Text("Price Electricity/Gas",
+                        style: TextStyle(
+                            color: globals.tabController4.index == 3
+                                ? ThemeApp().purplecolor
+                                : Colors.grey,
+                            fontWeight: FontWeight.bold)),
                   ),
                 ),
                 Container(
                   child: new Tab(
-                    child: Text("Price(1 Year) Electricity", style: TextStyle(color: globals.tabController4.index == 4 ? ThemeApp().purplecolor : Colors.grey, fontWeight: FontWeight.bold)),
+                    child: Text("Price(1 Year) Electricity",
+                        style: TextStyle(
+                            color: globals.tabController4.index == 4
+                                ? ThemeApp().purplecolor
+                                : Colors.grey,
+                            fontWeight: FontWeight.bold)),
                   ),
                 ),
                 Container(
                   child: new Tab(
-                    child: Text("Price(1 Year) Gas", style: TextStyle(color: globals.tabController4.index == 5 ? ThemeApp().purplecolor : Colors.grey, fontWeight: FontWeight.bold)),
+                    child: Text("Price(1 Year) Gas",
+                        style: TextStyle(
+                            color: globals.tabController4.index == 5
+                                ? ThemeApp().purplecolor
+                                : Colors.grey,
+                            fontWeight: FontWeight.bold)),
                   ),
                 ),
               ],
@@ -94,7 +124,14 @@ class _AddQuotationIndividualPageState extends State<AddQuotationIndividualPage>
           ),
           Expanded(
             child: TabBarView(
-              children: [BusinessDetail(), Electricity(), Gas(),PriceElectricityGas(),PriceElectricity(),PriceGas()],
+              children: [
+                BusinessDetail(),
+                Electricity(),
+                Gas(),
+                PriceElectricityGas(),
+                PriceElectricity(),
+                PriceGas()
+              ],
               controller: globals.tabController4,
             ),
           )

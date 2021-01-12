@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:pozitive/Core/Model/Api/askForQuoteModel.dart';
+
+import 'package:pozitive/Core/Model/Api/askForQuoteViewButtonModel.dart';
+import 'package:pozitive/Core/Model/Api/getPartnerAddQuickLeadModel.dart';
+
 import 'package:pozitive/Util/theme.dart';
 import 'package:pozitive/Pages/Quotation/Tab/individual.dart';
 import 'package:pozitive/Pages/Quotation/Tab/electricity.dart';
@@ -6,13 +11,15 @@ import 'package:pozitive/Pages/Quotation/Tab/gas.dart';
 import 'package:pozitive/Widget/appbar.dart';
 import 'package:pozitive/Widget/drawerwidget.dart';
 import 'package:pozitive/Util/global.dart' as globals;
+import 'package:provider/provider.dart';
 
 class QuotationPage extends StatefulWidget {
   @override
   _QuotationPageState createState() => _QuotationPageState();
 }
 
-class _QuotationPageState extends State<QuotationPage> with SingleTickerProviderStateMixin {
+class _QuotationPageState extends State<QuotationPage>
+    with SingleTickerProviderStateMixin {
   //TabController _tabController;
   GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
   @override
@@ -24,7 +31,6 @@ class _QuotationPageState extends State<QuotationPage> with SingleTickerProvider
 
   void _handleTabSelection() {
     setState(() {
-
       globals.tabController3.index;
     });
   }
@@ -50,25 +56,39 @@ class _QuotationPageState extends State<QuotationPage> with SingleTickerProvider
               unselectedLabelColor: Colors.grey,
               labelColor: ThemeApp().purplecolor,
               indicatorColor: ThemeApp().purplecolor,
-             // isScrollable: true,
+              // isScrollable: true,
               tabs: [
                 Container(
                   child: new Tab(
                     child: Text(
                       "Individual",
-                      style: TextStyle(color: globals.tabController3.index == 0 ? ThemeApp().purplecolor : Colors.grey, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                          color: globals.tabController3.index == 0
+                              ? ThemeApp().purplecolor
+                              : Colors.grey,
+                          fontWeight: FontWeight.bold),
                     ),
                   ),
                   width: tabWidth,
                 ),
                 Container(
                     child: new Tab(
-                      child: Text("Electricity", style: TextStyle(color: globals.tabController3.index == 1 ? ThemeApp().purplecolor : Colors.grey, fontWeight: FontWeight.bold)),
+                      child: Text("Electricity",
+                          style: TextStyle(
+                              color: globals.tabController3.index == 1
+                                  ? ThemeApp().purplecolor
+                                  : Colors.grey,
+                              fontWeight: FontWeight.bold)),
                     ),
                     width: tabWidth),
                 Container(
                     child: new Tab(
-                      child: Text("Gas", style: TextStyle(color: globals.tabController3.index == 2 ? ThemeApp().purplecolor : Colors.grey, fontWeight: FontWeight.bold)),
+                      child: Text("Gas",
+                          style: TextStyle(
+                              color: globals.tabController3.index == 2
+                                  ? ThemeApp().purplecolor
+                                  : Colors.grey,
+                              fontWeight: FontWeight.bold)),
                     ),
                     width: tabWidth),
               ],
@@ -76,9 +96,20 @@ class _QuotationPageState extends State<QuotationPage> with SingleTickerProvider
             ),
           ),
           Expanded(
-            child: TabBarView(
-              children: [Individual(), Electricity(), Gas()],
-              controller: globals.tabController3,
+            child: MultiProvider(
+              providers: [
+                StreamProvider<AskForQuoteModel>(
+                  create: (context) => Stream.value(AskForQuoteModel()),
+                ),
+                StreamProvider<AskForQuoteViewButtonModel>(
+                  create: (context) =>
+                      Stream.value(AskForQuoteViewButtonModel()),
+                ),
+              ],
+              child: TabBarView(
+                children: [Individual(), Electricity(), Gas()],
+                controller: globals.tabController3,
+              ),
             ),
           )
         ],

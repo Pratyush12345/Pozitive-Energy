@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class SizeConfig {
@@ -14,6 +13,5 @@ class SizeConfig {
     screenHeight = _mediaQueryData.size.height;
     blockSizeHorizontal = screenWidth / 100;
     blockSizeVertical = screenHeight / 100;
-
   }
 }

@@ -13,17 +13,16 @@ class DashBoardDetailDataModel {
 
   DashBoardDetailDataModel(
       {this.accountId,
-        this.pageNo,
-        this.noOfRows,
-        this.nextPageAvail,
-        this.txtSearch,
-        this.strstatus,
-        this.type,
-        this.bIsRestrictRefresh,
-        this.dteRestrictRefreshDate,
-        this.strGroupType,
-
-        this.lstgetdetail});
+      this.pageNo,
+      this.noOfRows,
+      this.nextPageAvail,
+      this.txtSearch,
+      this.strstatus,
+      this.type,
+      this.bIsRestrictRefresh,
+      this.dteRestrictRefreshDate,
+      this.strGroupType,
+      this.lstgetdetail});
 
   DashBoardDetailDataModel.fromJson(Map<String, dynamic> json) {
     accountId = json['AccountId'];
@@ -37,7 +36,7 @@ class DashBoardDetailDataModel {
     dteRestrictRefreshDate = json['dteRestrictRefreshDate'];
     strGroupType = json['strGroupType'];
     if (json['lstgetdetail'] != null) {
-      lstgetdetail = new List<Lstgetdetail>();
+      lstgetdetail = <Lstgetdetail>[];
       json['lstgetdetail'].forEach((v) {
         lstgetdetail.add(new Lstgetdetail.fromJson(v));
       });
@@ -89,49 +88,51 @@ class Lstgetdetail {
 
   Lstgetdetail(
       {this.intId,
-        this.intGroupId,
-        this.nosCustomer,
-        this.strGroupname,
-        this.dteRequestedDateGroup,
-        this.businessName,
-        this.dteRequestedDate,
-        this.strEmailId,
-        this.phoneNo,
-        this.dteCreatedDate,
-        this.bgColor,
-        this.strLastAccess,
-        this.strBrokername,
-        this.lastMsgRead,
-        this.strManualStatus,
-        this.bteShowRefreshbutton,
-        this.bteShowOptions,
-        this.dteQuotedDate,
-        this.quotedDate,
-        this.colapseTime,this.isSelcted:false,this.click:false});
+      this.intGroupId,
+      this.nosCustomer,
+      this.strGroupname,
+      this.dteRequestedDateGroup,
+      this.businessName,
+      this.dteRequestedDate,
+      this.strEmailId,
+      this.phoneNo,
+      this.dteCreatedDate,
+      this.bgColor,
+      this.strLastAccess,
+      this.strBrokername,
+      this.lastMsgRead,
+      this.strManualStatus,
+      this.bteShowRefreshbutton,
+      this.bteShowOptions,
+      this.dteQuotedDate,
+      this.quotedDate,
+      this.colapseTime,
+      this.isSelcted: false,
+      this.click: false});
 
   Lstgetdetail.fromJson(Map<String, dynamic> json) {
     intId = json['intId'];
     intGroupId = json['intGroupId'];
-    nosCustomer = json['NosCustomer']??'';
+    nosCustomer = json['NosCustomer'] ?? '';
     strGroupname = json['strGroupname'];
     dteRequestedDateGroup = json['dteRequestedDateGroup'];
-    businessName = json['Business_Name']??'';
-    dteRequestedDate = json['dteRequestedDate']??'';
-    strEmailId = json['strEmailId']??'';
+    businessName = json['Business_Name'] ?? '';
+    dteRequestedDate = json['dteRequestedDate'] ?? '';
+    strEmailId = json['strEmailId'] ?? '';
     phoneNo = json['PhoneNo'];
     dteCreatedDate = json['dteCreatedDate'];
     bgColor = json['bgColor'];
     strLastAccess = json['strLastAccess'];
     strBrokername = json['strBrokername'];
     lastMsgRead = json['LastMsgRead'];
-    strManualStatus = json['strManualStatus']??'';
+    strManualStatus = json['strManualStatus'] ?? '';
     bteShowRefreshbutton = json['bteShowRefreshbutton'];
     bteShowOptions = json['bteShowOptions'];
     dteQuotedDate = json['dteQuotedDate'];
     quotedDate = json['QuotedDate'];
     colapseTime = json['ColapseTime'];
-    isSelcted=json['isSlected']??false;
-    click=json['click']??false;
+    isSelcted = json['isSlected'] ?? false;
+    click = json['click'] ?? false;
   }
 
   Map<String, dynamic> toJson() {
@@ -156,8 +157,8 @@ class Lstgetdetail {
     data['dteQuotedDate'] = this.dteQuotedDate;
     data['QuotedDate'] = this.quotedDate;
     data['ColapseTime'] = this.colapseTime;
-    data["isSlected"]==null?false:data["isSlected"]=this.isSelcted;
-    data['click']==null?false:data['click']=this.click;
+    data["isSlected"] == null ? false : data["isSlected"] = this.isSelcted;
+    data['click'] == null ? false : data['click'] = this.click;
     return data;
   }
 }

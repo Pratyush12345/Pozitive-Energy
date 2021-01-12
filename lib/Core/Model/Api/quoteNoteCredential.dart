@@ -1,4 +1,3 @@
-
 import 'package:pozitive/Core/Model/sendable.dart';
 
 class QuoteNoteCredential extends Sendable {

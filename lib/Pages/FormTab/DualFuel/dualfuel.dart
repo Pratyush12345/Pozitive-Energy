@@ -17,9 +17,9 @@ class DualFuelTabe extends StatefulWidget {
   _DualFuelTabeState createState() => _DualFuelTabeState();
 }
 
-class _DualFuelTabeState extends State<DualFuelTabe> with SingleTickerProviderStateMixin {
-
- // TabController _tabController;
+class _DualFuelTabeState extends State<DualFuelTabe>
+    with SingleTickerProviderStateMixin {
+  // TabController _tabController;
 
   @override
   void initState() {
@@ -29,6 +29,7 @@ class _DualFuelTabeState extends State<DualFuelTabe> with SingleTickerProviderSt
     globals.tabController2.addListener(_handleTabSelection);
     super.initState();
   }
+
   void _handleTabSelection() {
     setState(() {
       globals.tabController2.index;
@@ -47,34 +48,102 @@ class _DualFuelTabeState extends State<DualFuelTabe> with SingleTickerProviderSt
               unselectedLabelColor: Colors.grey,
               labelColor: ThemeApp().purplecolor,
               indicatorColor: ThemeApp().purplecolor,
-              isScrollable: true,tabs: [
-              new Tab(child: Text("Electricity",style: TextStyle(color: globals.tabController2.index == 0?ThemeApp().purplecolor:Colors.grey,fontWeight: FontWeight.bold),),),
-              new Tab(child: Text("Gas",style: TextStyle(color: globals.tabController2.index == 1?ThemeApp().purplecolor:Colors.grey,fontWeight: FontWeight.bold)),),
-              new Tab(child: Text("Business Details",style: TextStyle(color: globals.tabController2.index == 2?ThemeApp().purplecolor:Colors.grey,fontWeight: FontWeight.bold)),),
-              new Tab(child: Text("Site Address",style: TextStyle(color: globals.tabController2.index == 3?ThemeApp().purplecolor:Colors.grey,fontWeight: FontWeight.bold)),),
-              new Tab(child: Text("Billing Address",style: TextStyle(color: globals.tabController2.index == 4?ThemeApp().purplecolor:Colors.grey,fontWeight: FontWeight.bold)),),
-              new Tab(child: Text("Energy Account Manager",style: TextStyle(color: globals.tabController2.index == 5?ThemeApp().purplecolor:Colors.grey,fontWeight: FontWeight.bold)),),
-              new Tab(child: Text("Payment Details",style: TextStyle(color: globals.tabController2.index == 6?ThemeApp().purplecolor:Colors.grey,fontWeight: FontWeight.bold)),),
-              new Tab(child: Text("Partner Details",style: TextStyle(color: globals.tabController2.index == 7?ThemeApp().purplecolor:Colors.grey,fontWeight: FontWeight.bold)),),
-              new Tab(child: Text("Group Details",style: TextStyle(color: globals.tabController2.index == 8?ThemeApp().purplecolor:Colors.grey,fontWeight: FontWeight.bold)),),
-            ],
-              controller: globals.tabController2,),
+              isScrollable: true,
+              tabs: [
+                new Tab(
+                  child: Text(
+                    "Electricity",
+                    style: TextStyle(
+                        color: globals.tabController2.index == 0
+                            ? ThemeApp().purplecolor
+                            : Colors.grey,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+                new Tab(
+                  child: Text("Gas",
+                      style: TextStyle(
+                          color: globals.tabController2.index == 1
+                              ? ThemeApp().purplecolor
+                              : Colors.grey,
+                          fontWeight: FontWeight.bold)),
+                ),
+                new Tab(
+                  child: Text("Business Details",
+                      style: TextStyle(
+                          color: globals.tabController2.index == 2
+                              ? ThemeApp().purplecolor
+                              : Colors.grey,
+                          fontWeight: FontWeight.bold)),
+                ),
+                new Tab(
+                  child: Text("Site Address",
+                      style: TextStyle(
+                          color: globals.tabController2.index == 3
+                              ? ThemeApp().purplecolor
+                              : Colors.grey,
+                          fontWeight: FontWeight.bold)),
+                ),
+                new Tab(
+                  child: Text("Billing Address",
+                      style: TextStyle(
+                          color: globals.tabController2.index == 4
+                              ? ThemeApp().purplecolor
+                              : Colors.grey,
+                          fontWeight: FontWeight.bold)),
+                ),
+                new Tab(
+                  child: Text("Energy Account Manager",
+                      style: TextStyle(
+                          color: globals.tabController2.index == 5
+                              ? ThemeApp().purplecolor
+                              : Colors.grey,
+                          fontWeight: FontWeight.bold)),
+                ),
+                new Tab(
+                  child: Text("Payment Details",
+                      style: TextStyle(
+                          color: globals.tabController2.index == 6
+                              ? ThemeApp().purplecolor
+                              : Colors.grey,
+                          fontWeight: FontWeight.bold)),
+                ),
+                new Tab(
+                  child: Text("Partner Details",
+                      style: TextStyle(
+                          color: globals.tabController2.index == 7
+                              ? ThemeApp().purplecolor
+                              : Colors.grey,
+                          fontWeight: FontWeight.bold)),
+                ),
+                new Tab(
+                  child: Text("Group Details",
+                      style: TextStyle(
+                          color: globals.tabController2.index == 8
+                              ? ThemeApp().purplecolor
+                              : Colors.grey,
+                          fontWeight: FontWeight.bold)),
+                ),
+              ],
+              controller: globals.tabController2,
+            ),
           ),
-          Expanded(child: TabBarView(
-            children: [
-              Electicity(),
-              GasTab(),
-              BusinessDetailsTab(),
-              SiteAddressTab(),
-              BillingAddressTab(),
-              EnergyAccountManager(),
-              PaymentDetailsTab(),
-              PartnerDetailsTab(),
-              GroupDetailsTab()
-
-            ],
-            controller: globals.tabController2,
-          ),)
+          Expanded(
+            child: TabBarView(
+              children: [
+                Electicity(),
+                GasTab(),
+                BusinessDetailsTab(),
+                SiteAddressTab(),
+                BillingAddressTab(),
+                EnergyAccountManager(),
+                PaymentDetailsTab(),
+                PartnerDetailsTab(),
+                GroupDetailsTab()
+              ],
+              controller: globals.tabController2,
+            ),
+          )
         ],
       ),
     );

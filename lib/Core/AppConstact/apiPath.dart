@@ -1,3 +1,4 @@
-class ApiPath{
-  static const String quickLeadQuoteDashboardDetail='QuickLeadQuoteDashboardDetail';
+class ApiPath {
+  static const String quickLeadQuoteDashboardDetail =
+      'QuickLeadQuoteDashboardDetail';
 }

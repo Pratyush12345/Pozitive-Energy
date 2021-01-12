@@ -2,9 +2,8 @@ import 'package:connectivity/connectivity.dart';
 import 'package:flutter/material.dart';
 import 'package:pozitive/Core/AppConstact/appStyles.dart';
 
-class AppConstant{
+class AppConstant {
   static showFialureDialogue(String message, BuildContext context) async {
-
     await showDialog(
         context: context,
         builder: (ctx) {
@@ -28,15 +27,17 @@ class AppConstant{
           );
         });
   }
+
   static String stringValidator(String value, String controllerName) {
     if (value.isEmpty) {
       return "Please enter $controllerName";
     }
     return null;
   }
-  static Future checkConnectivity(BuildContext context)async{
+
+  static Future checkConnectivity(BuildContext context) async {
     var connectivityResult = await (Connectivity().checkConnectivity());
-    if(connectivityResult==ConnectivityResult.none){
+    if (connectivityResult == ConnectivityResult.none) {
       showFialureDialogue('No Internet Connection', context);
     }
 //    if (connectivityResult == ConnectivityResult.mobile) {
@@ -45,8 +46,9 @@ class AppConstant{
 //      // I am connected to a wifi network.
 //    }
   }
-  static showComfirmDialogue({ BuildContext mainContext,Function function}) async {
 
+  static showComfirmDialogue(
+      {BuildContext mainContext, Function function}) async {
     await showDialog(
         context: mainContext,
         builder: (ctx) {

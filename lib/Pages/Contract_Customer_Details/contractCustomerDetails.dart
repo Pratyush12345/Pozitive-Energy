@@ -13,14 +13,14 @@ import 'package:pozitive/Pages/Contract_Customer_Details/Tab/siteAddress.dart';
 import 'package:pozitive/Pages/Contract_Customer_Details/Tab/uniqueRefNo.dart';
 import 'package:pozitive/Util/global.dart' as globals;
 
-
-
 class ContractCustomerDetails extends StatefulWidget {
   @override
-  _ContractCustomerDetailsState createState() => _ContractCustomerDetailsState();
+  _ContractCustomerDetailsState createState() =>
+      _ContractCustomerDetailsState();
 }
-class _ContractCustomerDetailsState extends State<ContractCustomerDetails> with SingleTickerProviderStateMixin{
 
+class _ContractCustomerDetailsState extends State<ContractCustomerDetails>
+    with SingleTickerProviderStateMixin {
   //TabController _tabController;
   GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
   @override
@@ -36,13 +36,13 @@ class _ContractCustomerDetailsState extends State<ContractCustomerDetails> with 
     });
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       key: _scaffoldKey,
-      appBar: appbar("Contract Customer Details", context, _scaffoldKey, true, true),
+      appBar: appbar(
+          "Contract Customer Details", context, _scaffoldKey, true, true),
       drawer: DrawerWidget(),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -62,43 +62,82 @@ class _ContractCustomerDetailsState extends State<ContractCustomerDetails> with 
                   child: new Tab(
                     child: Text(
                       "Unique ref no.",
-                      style: TextStyle(color: globals.tabController5.index == 0 ? ThemeApp().purplecolor : Colors.grey, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                          color: globals.tabController5.index == 0
+                              ? ThemeApp().purplecolor
+                              : Colors.grey,
+                          fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),
                 Container(
                   child: new Tab(
-                    child: Text("Business Detail", style: TextStyle(color: globals.tabController5.index == 1 ? ThemeApp().purplecolor : Colors.grey, fontWeight: FontWeight.bold)),
+                    child: Text("Business Detail",
+                        style: TextStyle(
+                            color: globals.tabController5.index == 1
+                                ? ThemeApp().purplecolor
+                                : Colors.grey,
+                            fontWeight: FontWeight.bold)),
                   ),
                 ),
                 Container(
                   child: new Tab(
-                    child: Text("Site Address", style: TextStyle(color: globals.tabController5.index == 2 ? ThemeApp().purplecolor : Colors.grey, fontWeight: FontWeight.bold)),
+                    child: Text("Site Address",
+                        style: TextStyle(
+                            color: globals.tabController5.index == 2
+                                ? ThemeApp().purplecolor
+                                : Colors.grey,
+                            fontWeight: FontWeight.bold)),
                   ),
                 ),
                 Container(
                   child: new Tab(
-                    child: Text("Billing Address", style: TextStyle(color: globals.tabController5.index == 3 ? ThemeApp().purplecolor : Colors.grey, fontWeight: FontWeight.bold)),
+                    child: Text("Billing Address",
+                        style: TextStyle(
+                            color: globals.tabController5.index == 3
+                                ? ThemeApp().purplecolor
+                                : Colors.grey,
+                            fontWeight: FontWeight.bold)),
                   ),
                 ),
                 Container(
                   child: new Tab(
-                    child: Text("Energy Account Manager", style: TextStyle(color: globals.tabController5.index == 4 ? ThemeApp().purplecolor : Colors.grey, fontWeight: FontWeight.bold)),
+                    child: Text("Energy Account Manager",
+                        style: TextStyle(
+                            color: globals.tabController5.index == 4
+                                ? ThemeApp().purplecolor
+                                : Colors.grey,
+                            fontWeight: FontWeight.bold)),
                   ),
                 ),
                 Container(
                   child: new Tab(
-                    child: Text("Electricity", style: TextStyle(color: globals.tabController5.index == 5 ? ThemeApp().purplecolor : Colors.grey, fontWeight: FontWeight.bold)),
+                    child: Text("Electricity",
+                        style: TextStyle(
+                            color: globals.tabController5.index == 5
+                                ? ThemeApp().purplecolor
+                                : Colors.grey,
+                            fontWeight: FontWeight.bold)),
                   ),
                 ),
                 Container(
                   child: new Tab(
-                    child: Text("Gas", style: TextStyle(color: globals.tabController5.index == 6 ? ThemeApp().purplecolor : Colors.grey, fontWeight: FontWeight.bold)),
+                    child: Text("Gas",
+                        style: TextStyle(
+                            color: globals.tabController5.index == 6
+                                ? ThemeApp().purplecolor
+                                : Colors.grey,
+                            fontWeight: FontWeight.bold)),
                   ),
                 ),
                 Container(
                   child: new Tab(
-                    child: Text("Direct Debit Agreement", style: TextStyle(color: globals.tabController5.index == 7 ? ThemeApp().purplecolor : Colors.grey, fontWeight: FontWeight.bold)),
+                    child: Text("Direct Debit Agreement",
+                        style: TextStyle(
+                            color: globals.tabController5.index == 7
+                                ? ThemeApp().purplecolor
+                                : Colors.grey,
+                            fontWeight: FontWeight.bold)),
                   ),
                 ),
               ],

@@ -15,104 +15,114 @@ class ForgotPasswordPage extends StatefulWidget {
 }
 
 class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
-
   GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
-  TextEditingController email= TextEditingController();
+  TextEditingController email = TextEditingController();
 
-  bool _autovalidation=false;
-
+  bool _autovalidation = false;
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-
   }
 
   @override
   Widget build(BuildContext context) {
     return BaseView<ForgotPasswordViewModel>(
-      builder: (context,model,child){
-        if(model.state==ViewState.BUSY){
+      builder: (context, model, child) {
+        if (model.state == ViewState.BUSY) {
           return Scaffold(
             body: Center(
               child: CircularProgressIndicator(),
             ),
           );
-        }else{
+        } else {
           return Scaffold(
             backgroundColor: Colors.white,
-            appBar:appbar("Forgot Password",context,_scaffoldKey, false,false),
-            body: Padding(padding: EdgeInsets.only(left: MediaQuery.of(context).size.width * 0.03,right: MediaQuery.of(context).size.width * 0.03),
+            appBar:
+                appbar("Forgot Password", context, _scaffoldKey, false, false),
+            body: Padding(
+                padding: EdgeInsets.only(
+                    left: MediaQuery.of(context).size.width * 0.03,
+                    right: MediaQuery.of(context).size.width * 0.03),
                 child: SingleChildScrollView(
                   child: Column(
                     children: <Widget>[
                       SizedBox(
-                        height:MediaQuery.of(context).size.height*.03,
+                        height: MediaQuery.of(context).size.height * .03,
                       ),
-                      Text("Please enter registered email-id to recover your password.",style: TextStyle(fontSize: titlefontSize(context)),),
-
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height*0.03,
+                      Text(
+                        "Please enter registered email-id to recover your password.",
+                        style: TextStyle(fontSize: titlefontSize(context)),
                       ),
-                      textFieldEmail(email,false,_autovalidation,TextInputType.emailAddress,"Email Id",
-                              (value) {
-                            if (value.isEmpty) {
-                              return 'Please enter email id';
-                            }
-                            return null;
-                          },context),
                       SizedBox(
-                        height:MediaQuery.of(context).size.height*.01,
+                        height: MediaQuery.of(context).size.height * 0.03,
+                      ),
+                      textFieldEmail(email, false, _autovalidation,
+                          TextInputType.emailAddress, "Email Id", (value) {
+                        if (value.isEmpty) {
+                          return 'Please enter email id';
+                        }
+                        return null;
+                      }, context),
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * .01,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: <Widget>[
                           InkWell(
-                            child: Text("Change Password?",style: TextStyle(color: Color.fromRGBO(128, 189, 40, 1),fontSize: MediaQuery.of(context).size.height*.02)),
-                            onTap: (){
-                              Navigator.of(context).push(new MaterialPageRoute(builder: (context)=>ChangePasswordPage())).then((value){
+                            child: Text("Change Password?",
+                                style: TextStyle(
+                                    color: Color.fromRGBO(128, 189, 40, 1),
+                                    fontSize:
+                                        MediaQuery.of(context).size.height *
+                                            .02)),
+                            onTap: () {
+                              Navigator.of(context)
+                                  .push(new MaterialPageRoute(
+                                      builder: (context) =>
+                                          ChangePasswordPage()))
+                                  .then((value) {
                                 email.text = "";
                               });
                             },
-
                           ),
                         ],
                       ),
                       SizedBox(
-                        height:MediaQuery.of(context).size.height*.03,
+                        height: MediaQuery.of(context).size.height * .03,
                       ),
-
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
-                          InkWell(child: buttonframewithresize(context,"Back To Login",0.45),
+                          InkWell(
+                            child: buttonframewithresize(
+                                context, "Back To Login", 0.45),
                             highlightColor: Colors.transparent,
                             splashColor: Colors.transparent,
-                            onTap: (){
+                            onTap: () {
                               Navigator.of(context).pop();
                             },
-
                           ),
-                          InkWell(child: buttonframewithresize(context,"Send Email",0.45),
+                          InkWell(
+                            child: buttonframewithresize(
+                                context, "Send Email", 0.45),
                             highlightColor: Colors.transparent,
                             splashColor: Colors.transparent,
-                            onTap: (){
-                            model.forgotPassword(ProfileEmailId(
-                              emailId: email.text
-                            ));
-                            },),
+                            onTap: () {
+                              model.forgotPassword(
+                                  ProfileEmailId(emailId: email.text));
+                            },
+                          ),
                         ],
                       )
                     ],
                   ),
-                )
-
-            ) ,
+                )),
           );
         }
       },
-
     );
   }
 }
